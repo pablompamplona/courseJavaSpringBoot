@@ -6,21 +6,21 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.udemy.course.entities.Client;
-import com.udemy.course.repositories.ClientRepository;
+import com.udemy.course.entities.Order;
+import com.udemy.course.repositories.OrderRepository;
 
 @Service
-public class ClientService {
+public class OrderService {
 	
 	@Autowired
-	private ClientRepository repository;
+	private OrderRepository repository;
 	
-	public List<Client> findAll(){
+	public List<Order> findAll(){
 		return repository.findAll();	
 	}
 	
-	public Client findById(Long id) {
-		Optional<Client> obj = repository.findById(id);
+	public Order findById(Long id) {
+		Optional<Order> obj = repository.findById(id);
 		return obj.get();	
 	}
 

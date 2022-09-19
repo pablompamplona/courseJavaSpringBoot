@@ -9,25 +9,25 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.udemy.course.entities.Client;
-import com.udemy.course.services.ClientService;
+import com.udemy.course.entities.Order;
+import com.udemy.course.services.OrderService;
 
 @RestController
-@RequestMapping(value="/client")
-public class ClientResources {
+@RequestMapping(value="/orders")
+public class OrderResources {
 	
 	@Autowired
-	private ClientService service;
+	private OrderService service;
 	
 	@GetMapping
-	public ResponseEntity<List<Client>> findAll() {
-		List<Client> list = service.findAll();
+	public ResponseEntity<List<Order>> findAll() {
+		List<Order> list = service.findAll();
 		return ResponseEntity.ok().body(list);	
 	}
 	
 	@GetMapping(value = "/{id}")
-	public ResponseEntity<Client> findById(@PathVariable Long id){
-		Client obj = service.findById(id);
+	public ResponseEntity<Order> findById(@PathVariable Long id){
+		Order obj = service.findById(id);
 		return ResponseEntity.ok().body(obj);
 		
 	}
