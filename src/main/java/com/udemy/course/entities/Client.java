@@ -9,7 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Users implements Serializable{
+public class Client implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
@@ -20,10 +20,10 @@ public class Users implements Serializable{
 	private String phone;
 	private String password;
 	
-	public Users() {
+	public Client() {
 	}
 
-	public Users(Long id, String name, String email, String phone, String password) {
+	public Client(Long id, String name, String email, String phone, String password) {
 
 		this.id = id;
 		this.name = name;
@@ -85,7 +85,7 @@ public class Users implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Users other = (Users) obj;
+		Client other = (Client) obj;
 		return Objects.equals(id, other.id);
 	}
 	
